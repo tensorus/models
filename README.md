@@ -1,4 +1,4 @@
-# tensorus-models
+# Tensorus Models
 
 ## Overview
 Welcome to `tensorus-models`! This repository is a comprehensive extension to the core [Tensorus](https://github.com/tensorus/tensorus) library, offering a rich and diverse collection of pre-built machine learning models. Designed to accelerate your research and development, `tensorus-models` provides ready-to-use implementations spanning classical machine learning, deep learning (including computer vision, NLP, generative models, GNNs, and RL), time series analysis, and more.
