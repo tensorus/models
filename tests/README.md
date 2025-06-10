@@ -1,4 +1,4 @@
-# Tests
+# Tensorus Model Tests
 
 This document provides details specific to running the test suite for `tensorus-models`. For general installation of the `tensorus-models` package itself, please refer to the [main README.md](../README.md#installation).
 
