@@ -11,7 +11,7 @@ sys.modules.setdefault("tensorus.models", models_pkg)
 
 ts_spec = importlib.util.spec_from_file_location(
     "tensorus.tensor_storage",
-    Path(__file__).resolve().parents[1] / "tensorus" / "tensor_storage.py",
+    Path(__file__).resolve().parents[2] / "core" / "tensorus" / "tensor_storage.py",
 )
 ts_mod = importlib.util.module_from_spec(ts_spec)
 ts_spec.loader.exec_module(ts_mod)  # type: ignore
@@ -19,7 +19,7 @@ sys.modules["tensorus.tensor_storage"] = ts_mod
 
 base_spec = importlib.util.spec_from_file_location(
     "tensorus.models.base",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "base.py",
+    Path(__file__).resolve().parents[1] / "base.py",
 )
 base_mod = importlib.util.module_from_spec(base_spec)
 base_spec.loader.exec_module(base_mod)  # type: ignore
@@ -27,7 +27,7 @@ sys.modules["tensorus.models.base"] = base_mod
 
 spec_frcnn = importlib.util.spec_from_file_location(
     "tensorus.models.faster_rcnn",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "faster_rcnn.py",
+    Path(__file__).resolve().parents[1] / "faster_rcnn.py",
 )
 faster_rcnn = importlib.util.module_from_spec(spec_frcnn)
 spec_frcnn.loader.exec_module(faster_rcnn)  # type: ignore
@@ -35,7 +35,7 @@ sys.modules["tensorus.models.faster_rcnn"] = faster_rcnn
 
 spec_unet = importlib.util.spec_from_file_location(
     "tensorus.models.unet_segmentation",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "unet_segmentation.py",
+    Path(__file__).resolve().parents[1] / "unet_segmentation.py",
 )
 unet_segmentation = importlib.util.module_from_spec(spec_unet)
 spec_unet.loader.exec_module(unet_segmentation)  # type: ignore

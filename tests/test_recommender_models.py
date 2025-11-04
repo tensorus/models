@@ -8,7 +8,7 @@ import torch
 import importlib.util
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parents[1] / "tensorus" / "models"
+BASE = Path(__file__).resolve().parents[1]
 import sys
 import types
 

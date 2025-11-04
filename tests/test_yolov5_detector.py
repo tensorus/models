@@ -12,7 +12,7 @@ sys.modules.setdefault("tensorus.models", models_pkg)
 
 storage_spec = importlib.util.spec_from_file_location(
     "tensorus.tensor_storage",
-    Path(__file__).resolve().parents[1] / "tensorus" / "tensor_storage.py",
+    Path(__file__).resolve().parents[2] / "core" / "tensorus" / "tensor_storage.py",
 )
 storage_mod = importlib.util.module_from_spec(storage_spec)
 storage_spec.loader.exec_module(storage_mod)  # type: ignore
@@ -27,7 +27,7 @@ sys.modules.setdefault("ultralytics", types.ModuleType("ultralytics"))
 
 base_spec = importlib.util.spec_from_file_location(
     "tensorus.models.base",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "base.py",
+    Path(__file__).resolve().parents[1] / "base.py",
 )
 base_mod = importlib.util.module_from_spec(base_spec)
 base_spec.loader.exec_module(base_mod)  # type: ignore
@@ -35,7 +35,7 @@ sys.modules["tensorus.models.base"] = base_mod
 
 spec_yolo = importlib.util.spec_from_file_location(
     "tensorus.models.yolov5_detector",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "yolov5_detector.py",
+    Path(__file__).resolve().parents[1] / "yolov5_detector.py",
 )
 yolov5_mod = importlib.util.module_from_spec(spec_yolo)
 spec_yolo.loader.exec_module(yolov5_mod)  # type: ignore

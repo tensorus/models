@@ -6,14 +6,14 @@ from pathlib import Path
 # Dynamically load module to avoid heavy package imports via tensorus.models
 pkg = types.ModuleType("tensorus")
 models_pkg = types.ModuleType("tensorus.models")
-pkg.__path__ = [str(Path(__file__).resolve().parents[1] / "tensorus")]
+pkg.__path__ = [str(Path(__file__).resolve().parents[2] / "core" / "tensorus")]
 sys.modules.setdefault("tensorus", pkg)
 sys.modules.setdefault("tensorus.models", models_pkg)
 
 # Load required base module for rl_models
 base_spec = importlib.util.spec_from_file_location(
     "tensorus.models.base",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "base.py",
+    Path(__file__).resolve().parents[1] / "base.py",
 )
 base_mod = importlib.util.module_from_spec(base_spec)
 base_spec.loader.exec_module(base_mod)  # type: ignore
@@ -21,7 +21,7 @@ sys.modules["tensorus.models.base"] = base_mod
 
 spec = importlib.util.spec_from_file_location(
     "tensorus.models.rl_models",
-    Path(__file__).resolve().parents[1] / "tensorus" / "models" / "rl_models.py",
+    Path(__file__).resolve().parents[1] / "rl_models.py",
 )
 rl_mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(rl_mod)  # type: ignore

@@ -13,13 +13,13 @@ sys.modules.setdefault("tensorus.models", models_pkg)
 
 ts_spec = importlib.util.spec_from_file_location(
     "tensorus.tensor_storage",
-    Path(__file__).resolve().parents[1] / "tensorus" / "tensor_storage.py",
+    Path(__file__).resolve().parents[2] / "core" / "tensorus" / "tensor_storage.py",
 )
 ts_mod = importlib.util.module_from_spec(ts_spec)
 ts_spec.loader.exec_module(ts_mod)  # type: ignore
 sys.modules["tensorus.tensor_storage"] = ts_mod
 
-base_path = Path(__file__).resolve().parents[1] / "tensorus" / "models"
+base_path = Path(__file__).resolve().parents[1]
 
 for mod_name in [
     "base",
